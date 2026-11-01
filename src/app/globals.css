@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ design tokens */
+@theme {
+  --font-sans: var(--font-noto), var(--font-noto-deva), "Noto Sans", "Noto Sans Devanagari", system-ui, sans-serif;
+
+  /*
+   * "Teal & Marigold": calm, trustworthy teal for everyday actions, warm marigold
+   * accents, soft warm neutrals. Red is reserved for emergencies and errors so it
+   * keeps its meaning. IIT Roorkee banner blue stays for the institute identity.
+   */
+  --color-brand: #0f766e;        /* primary: headers, buttons, icon tiles */
+  --color-brand-dark: #115e59;
+  --color-brand-light: #14b8a6;  /* gradient highlight */
+  --color-indigo: #0e3a53;       /* help band (deep ocean) */
+  --color-indigo-soft: #155e75;  /* tiles on the help band */
+  --color-indigo-deep: #0b2c3f;  /* floating help button */
+  --color-orange: #f59e0b;       /* marigold accent: underlines, highlights, focus ring */
+  --color-iitr: #1c4682;         /* IIT Roorkee banner */
+  --color-footer: #0b2230;
+
+  /* Warm neutrals. */
+  --color-paper: #f6f4ef;
+  --color-paper-deep: #ece7dd;
+  --color-ink: #1c2733;
+  --color-ink-soft: #5b6675;
+  --color-line: #e5dfd3;
+  --color-saffron: #f59e0b;
+  --color-saffron-deep: #b45309;
+
+  /* Semantic colours. */
+  --color-sec-schemes: #0e7490;
+  --color-sec-wages: #15803d;
+  --color-sec-health: #0369a1;
+  --color-sec-grievance: #0f766e;
+  --color-sec-rights: #7c3aed;   /* anonymous / whistleblower */
+  --color-sec-docs: #b45309;
+  --color-danger: #dc2626;       /* emergencies and errors only */
+  --color-ok: #16a34a;
+
+  --animate-pulse-ring: pulse-ring 1.4s ease-out infinite;
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.7); opacity: 0; }
+  }
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* Big, obvious keyboard focus for everyone. */
+:where(button, a, input, select, textarea, [role="button"]):focus-visible {
+  outline: 3px solid var(--color-orange);
+  outline-offset: 3px;
+}
+
+/* Leaflet sits under our modals. */
+.leaflet-container {
+  z-index: 0;
+  font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Section heading: bold, centred, short marigold underline. */
+.section-title {
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 4.5rem;
+  height: 5px;
+  margin: 0.6rem auto 0;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--color-orange), #fbbf24);
+}
+.section-title.on-dark::after {
+  background: linear-gradient(90deg, #fcd34d, #ffffff);
+}
+
+/* Hero band (complaint recorder): teal gradient with soft light glows. */
+.hero-band {
+  background:
+    radial-gradient(60rem 22rem at 110% -10%, rgb(255 255 255 / 0.16), transparent 60%),
+    radial-gradient(40rem 18rem at -10% 110%, rgb(245 158 11 / 0.22), transparent 60%),
+    linear-gradient(135deg, var(--color-brand-dark) 0%, var(--color-brand) 45%, #0d9488 100%);
+}
+
+/* Help band and plain section headers: deep ocean gradient. */
+.ocean-band {
+  background:
+    radial-gradient(50rem 20rem at 100% 0%, rgb(20 184 166 / 0.25), transparent 60%),
+    linear-gradient(135deg, var(--color-indigo-deep) 0%, var(--color-indigo) 55%, var(--color-indigo-soft) 100%);
+}
+
+/* Soft, friendly card lift. */
+.card-lift {
+  box-shadow: 0 1px 2px rgb(28 39 51 / 0.06), 0 8px 24px -12px rgb(28 39 51 / 0.18);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.card-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgb(28 39 51 / 0.06), 0 14px 32px -12px rgb(15 118 110 / 0.35);
+}

@@ -1,0 +1,10 @@
+{
+  "name": "श्रमिक सहायता · IIT Roorkee",
+  "short_name": "श्रमिक सहायता",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8ec",
+  "theme_color": "#1b140f",
+  "lang": "hi",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
