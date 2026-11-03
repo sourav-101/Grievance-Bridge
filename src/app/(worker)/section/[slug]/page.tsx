@@ -18,9 +18,9 @@ const SECTION_ICON: Record<string, LucideIcon> = {
   checklist: IdCard,
 };
 
-/** Photo heroes: Thomason Building for schemes, IIT Roorkee hospital for health. */
+/** Hero images: an illustration for government schemes, the IIT Roorkee hospital photo for health. */
 const HERO_IMAGE: Record<string, { src: string; alt: string; caption: string; captionEn: string }> = {
-  schemes: { src: "/images/thomason-building.jpg", alt: "Thomason Building, IIT Roorkee", caption: "थॉमसन भवन, IIT रुड़की", captionEn: "Thomason Building, IIT Roorkee" },
+  schemes: { src: "/images/government-schemes.svg", alt: "Government schemes: ID card, savings, insurance and health", caption: "", captionEn: "" },
   health: { src: "/images/iitr-hospital.jpg", alt: "IIT Roorkee hospital emergency ward", caption: "IIT रुड़की अस्पताल — आपातकालीन कक्ष", captionEn: "IIT Roorkee hospital — emergency ward" },
 };
 
@@ -63,7 +63,9 @@ export default function SectionPage() {
               <p className="text-base text-white/90">{t(section.introHi, section.introEn)}</p>
             </div>
           </div>
-          <p className="absolute right-2 top-2 rounded bg-black/50 px-2 py-0.5 text-xs text-white">{t(hero.caption, hero.captionEn)}</p>
+          {hero.caption && (
+            <p className="absolute right-2 top-2 rounded bg-black/50 px-2 py-0.5 text-xs text-white">{t(hero.caption, hero.captionEn)}</p>
+          )}
         </header>
       ) : (
         <header className="ocean-band px-4 py-8 text-white">

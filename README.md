@@ -34,7 +34,7 @@ Theme **"Teal & Marigold"** (tokens in `src/app/globals.css`):
   - deep-ocean help band
   - footer
 - **Help assistant:** a chat button sits at the bottom-right of every worker and login page (`/api/assistant`). It answers "how do I…" questions with short Hindi or English replies and buttons that open the right page. It accepts typed or spoken questions and works before login. If `GROQ_API_KEY` is missing it falls back to built-in keyword answers.
-- **Images** (`public/images/`): the IIT Roorkee logo and building silhouette (from the supplied banner), the Thomason Building (schemes) and the IITR hospital (health). Replace them with official high-resolution files if available.
+- **Images** (`public/images/`): the IIT Roorkee logo and building silhouette (from the supplied banner), a government-schemes illustration (`government-schemes.svg`: ID card, ₹ savings, insurance, health) and the IITR hospital photo (health). Replace them with official high-resolution files if available.
 
 ## 1. Quick start
 

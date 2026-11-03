@@ -148,7 +148,7 @@ export default function HomePage() {
           <SectionHeading>{t("मुख्य जानकारी", "Featured")}</SectionHeading>
           <div className="grid gap-4 sm:grid-cols-2">
             <Link href="/section/schemes" className="card-lift group overflow-hidden rounded-2xl bg-white">
-              <img src="/images/thomason-building.jpg" alt={t("IIT रुड़की का थॉमसन भवन", "Thomason Building, IIT Roorkee")} className="aspect-[16/9] w-full object-cover" />
+              <img src="/images/government-schemes.svg" alt={t("सरकारी योजनाएं: पहचान पत्र, बचत, बीमा और स्वास्थ्य", "Government schemes: ID card, savings, insurance and health")} className="aspect-[16/9] w-full object-cover" />
               <div className="flex items-center gap-3 p-4">
                 <div className="flex-1">
                   <p className="text-lg font-semibold">{t("सरकारी योजनाएं", "Government schemes")}</p>
